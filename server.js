@@ -25,7 +25,6 @@ app.use(
   })
 );
 
-app.options("*", cors(corsOptions)); // Enable preflight requests for all routes
 app.use((req, res, next) => {
   console.log(`CORS headers applied for ${req.method} request to ${req.url}`);
   next();
