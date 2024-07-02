@@ -24,7 +24,9 @@ app.use(
       "https://authz-app-git-master-amalthomas1234s-projects.vercel.app/",
       "https://authz-app-delta.vercel.app/",
     ],
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
+    optionsSuccessStatus: 204,
   })
 );
 
