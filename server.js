@@ -17,18 +17,19 @@ app.use(bodyParser.json());
 
 app.use(
   cors({
-    origin: [
-      "http://localhost:3000",
-      "https://authz-app.vercel.app",
-      "https://authz-igrratgkm-amalthomas1234s-projects.vercel.app/",
-      "https://authz-app-git-master-amalthomas1234s-projects.vercel.app/",
-      "https://authz-app-delta.vercel.app/",
-    ],
+    origin: "https://authz-app-git-master-amalthomas1234s-projects.vercel.app",
+
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
     optionsSuccessStatus: 204,
   })
 );
+
+app.options("*", cors(corsOptions)); // Enable preflight requests for all routes
+app.use((req, res, next) => {
+  console.log(`CORS headers applied for ${req.method} request to ${req.url}`);
+  next();
+});
 
 // Routes
 
