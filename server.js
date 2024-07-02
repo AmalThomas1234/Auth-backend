@@ -17,7 +17,13 @@ app.use(bodyParser.json());
 
 app.use(
   cors({
-    origin: ["http://localhost:3000", "https://authz-app.vercel.app"],
+    origin: [
+      "http://localhost:3000",
+      "https://authz-app.vercel.app",
+      "https://authz-igrratgkm-amalthomas1234s-projects.vercel.app/",
+      "https://authz-app-git-master-amalthomas1234s-projects.vercel.app/",
+      "https://authz-app-delta.vercel.app/",
+    ],
     credentials: true,
   })
 );
